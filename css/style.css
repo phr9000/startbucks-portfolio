@@ -1,0 +1,65 @@
+/*####공통####*/
+/*####### 초기화 ########*/
+*{margin:0; padding:0;}
+a:link, a:visited{text-decoration:none; color:#333;}
+/*탭 이동 시 바깥 라인 안생기게함*/
+a{outline:none; }
+input{outline:none; }
+li{list-style-type:none;}
+body{font-family:"noto"; }
+body, header, nav, section, footer, form{margin:0; padding:0;}
+header, nav, section, footer{display:block;}
+input[type="button"], input[type="submit"], input[type="reset"], button{cursor:pointer;}
+img{border:none; }
+/*pc영역에서 모바일영역 숨기기*/
+.mob_nav{display:none; }
+
+/*####모바일#####*/
+/*mobile hamburgur*/
+/*
+   * Squeeze
+   */
+   .hamburger--squeeze .hamburger-inner {
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+    background-color:rgba(82,69,59);}
+    .hamburger--squeeze .hamburger-inner::before {
+      background-color:rgba(82,69,59);
+      transition: top 0.075s 0.12s ease, opacity 0.075s ease; }
+    .hamburger--squeeze .hamburger-inner::after {
+      background-color:rgba(82,69,59);
+      transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  
+  .hamburger--squeeze.is-active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+    background-color:rgba(82,69,59);}
+    .hamburger--squeeze.is-active .hamburger-inner::before {
+      top: 0;
+      opacity: 0;
+      transition: top 0.075s ease, opacity 0.075s 0.12s ease; 
+      background-color:rgba(82,69,59);}
+    .hamburger--squeeze.is-active .hamburger-inner::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+      background-color:rgba(82,69,59);}
+  
+
+/* 모바일 */
+@media all and (min-width:481px) and (max-width:767px){
+  .mob_header{position:fixed; width:100%; height: 70px; padding:0;  margin:0; background-color:rgba(246, 245, 240);}
+  h1{width:30px; padding:0 !important; margin:0 !important;  position:absolute; top:13px; left:10px; }
+  .mob_nav{display:block; float:right; margin-right:10px; }
+  .mob_logo{display:inline-block; width:45px; height:45px; }
+  .mob_logo img{width:100%; height:100%; }
+  .m_login{position:absolute; top:18px; right:125px; width:25px; height:30px; }
+  .m_login img{width:100%; height:100%;}
+  .m_location{position:absolute; top:18px; right:83px; width:25px; height:30px; }
+  .m_location img{width:100%; height:100%; }
+  /*hambugur*/
+  .hamburger{padding:23px 15px; }
+
+  
+}
